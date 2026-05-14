@@ -163,7 +163,8 @@ const { title = 'Leandro Benjamin' } = Astro.props;
       .Hero__content { width: 50%; }
       .Hero__eyebrow {
         transform: rotate(-5deg); transform-origin: bottom left;
-        font-size: clamp(1.5rem, 3vw, 2.2rem);
+        font-size: clamp(1.25rem, 2vw, 1.55rem);
+        font-weight: 400;
         color: var(--color-dark);
         margin-bottom: 1.5rem;
       }
@@ -254,8 +255,9 @@ const { title = 'Leandro Benjamin' } = Astro.props;
         align-self: flex-start;
         transform: rotate(-5deg); transform-origin: bottom left;
         font-family: var(--font-cursive);
-        font-size: 1.35rem; font-weight: 600;
-        color: var(--color-biscuit);
+        font-size: clamp(1rem, 1.5vw, 1.25rem);
+        font-weight: 400;
+        color: var(--color-dark);
         padding-left: 0.2rem; min-width: 90px;
       }
       .Card__link {
