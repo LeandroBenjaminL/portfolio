@@ -1,0 +1,199 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Leandro Benjamin — Portfolio">
+  <!-- ═══ Hero ═══ -->
+  <section class="hero">
+    <span class="emoji">⚡</span>
+    <p class="greeting">Hola, soy Leandro</p>
+    <h1>
+      Data Engineer &amp;<br /><span>Full-Stack Developer</span>
+    </h1>
+    <p class="tagline">
+      Transformo datos crudos en pipelines robustos, APIs limpias y dashboards que cuentan historias.
+      De la ingestion al deploy, hago que los datos trabajen.
+    </p>
+    <div class="ctas">
+      <a href="https://github.com/LeandroBenjaminL" target="_blank" rel="noopener" class="btn btn-primary">
+        &#8599; GitHub
+      </a>
+      <a href="https://linkedin.com/in/leandrobenjamin" target="_blank" rel="noopener" class="btn btn-outline">
+        LinkedIn
+      </a>
+      <a href="#contact" class="btn btn-outline">
+        Contacto
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══ Proyectos ═══ -->
+  <section id="projects">
+    <span class="section-label">Proyectos</span>
+    <h2 class="section-title">Lo que construí</h2>
+
+    <!-- Datlas -->
+    <article class="project">
+      <div class="p-header">
+        <h3>
+          <a href="https://github.com/LeandroBenjaminL/datlas" target="_blank" rel="noopener">Datlas</a>
+        </h3>
+        <span class="p-badge">Destacado</span>
+      </div>
+      <p>
+        Plataforma para carga, limpieza y exploración de datasets. Subí un CSV, detecta nulos y outliers,
+        genera perfil estadístico completo y exporta a múltiples formatos. Arquitectura profesional con
+        FastAPI + Pandas + PostgreSQL + Docker + AWS Lambda. Frontend en Astro.
+      </p>
+      <div class="tags" style="margin-top:0.75rem;">
+        <span class="tag accent">Python</span>
+        <span class="tag teal">FastAPI</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag purple">Astro</span>
+        <span class="tag">Docker</span>
+        <span class="tag">AWS</span>
+      </div>
+      <a href="https://github.com/LeandroBenjaminL/datlas" target="_blank" rel="noopener" class="p-link">
+        Ver repositorio &rarr;
+      </a>
+    </article>
+
+    <!-- LEND.AI -->
+    <article class="project">
+      <div class="p-header">
+        <h3>
+          <a href="https://github.com/LeandroBenjaminL/lend-ai" target="_blank" rel="noopener">LEND.AI</a>
+        </h3>
+        <span class="p-badge">AI Ecosystem</span>
+      </div>
+      <p>
+        Ecosistema de agentes de IA con routing inteligente de modelos, skills modulares,
+        servidores MCP y una personalidad de mentor que enseña mientras resuelve.
+        Diseñado como plataforma extensible para amplificar el trabajo con LLMs.
+      </p>
+      <div class="tags" style="margin-top:0.75rem;">
+        <span class="tag accent">Python</span>
+        <span class="tag teal">MCP</span>
+        <span class="tag purple">LLMs</span>
+        <span class="tag">YAML</span>
+        <span class="tag">SQLite</span>
+      </div>
+      <a href="https://github.com/LeandroBenjaminL/lend-ai" target="_blank" rel="noopener" class="p-link">
+        Ver repositorio &rarr;
+      </a>
+    </article>
+
+    <!-- Crypto Tracker -->
+    <article class="project">
+      <div class="p-header">
+        <h3>
+          <a href="https://github.com/LeandroBenjaminL/crypto-tracker" target="_blank" rel="noopener">Crypto Tracker</a>
+        </h3>
+        <span class="p-badge">Full-Stack</span>
+      </div>
+      <p>
+        Rastreador de criptomonedas en tiempo real con APIs de mercado, historial de precios
+        y portfolio personal. Construido con integración de datos financieros y visualizaciones.
+      </p>
+      <div class="tags" style="margin-top:0.75rem;">
+        <span class="tag accent">Python</span>
+        <span class="tag teal">APIs</span>
+        <span class="tag">React</span>
+        <span class="tag">Node.js</span>
+      </div>
+      <a href="https://github.com/LeandroBenjaminL/crypto-tracker" target="_blank" rel="noopener" class="p-link">
+        Ver repositorio &rarr;
+      </a>
+    </article>
+
+    <!-- Frontend Ecosystem -->
+    <article class="project">
+      <div class="p-header">
+        <h3>
+          <a href="https://github.com/LeandroBenjaminL/frontend-ecosystem" target="_blank" rel="noopener">Frontend Ecosystem</a>
+        </h3>
+        <span class="p-badge">Open Source</span>
+      </div>
+      <p>
+        Ecosistema de +30 agentes especializados para desarrollo frontend con AI.
+        Incluye skills de React, Astro, testing, performance, accesibilidad, CSS y más.
+        Cada skill es un sub-agente efímero que nace, ejecuta y reporta.
+      </p>
+      <div class="tags" style="margin-top:0.75rem;">
+        <span class="tag purple">Astro</span>
+        <span class="tag accent">React</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag teal">MCP</span>
+        <span class="tag">Agentes AI</span>
+      </div>
+      <a href="https://github.com/LeandroBenjaminL/frontend-ecosystem" target="_blank" rel="noopener" class="p-link">
+        Ver repositorio &rarr;
+      </a>
+    </article>
+  </section>
+
+  <!-- ═══ Skills ═══ -->
+  <section id="skills">
+    <span class="section-label">Skills</span>
+    <h2 class="section-title">Tecnologías que manejo</h2>
+
+    <div style="display:flex; flex-direction:column; gap:2.5rem;">
+      <div>
+        <h3 style="font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--text-muted); margin-bottom:0.75rem;">Backend &amp; Datos</h3>
+        <div class="tags">
+          <span class="tag accent">Python</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">SQLAlchemy</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--text-muted); margin-bottom:0.75rem;">Frontend</h3>
+        <div class="tags">
+          <span class="tag purple">Astro</span>
+          <span class="tag accent">React</span>
+          <span class="tag teal">TypeScript</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Tailwind</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--text-muted); margin-bottom:0.75rem;">DevOps &amp; Infra</h3>
+        <div class="tags">
+          <span class="tag">Docker</span>
+          <span class="tag">AWS</span>
+          <span class="tag teal">GitHub Actions</span>
+          <span class="tag">Linux</span>
+          <span class="tag">Git</span>
+          <span class="tag purple">MCP</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Contacto ═══ -->
+  <section id="contact">
+    <span class="section-label">Contacto</span>
+    <h2 class="section-title">Charlemos</h2>
+    <p style="color:var(--text-secondary); max-width:500px; line-height:1.7;">
+      Siempre abierto a colaborar en proyectos de datos, pipelines o ideas locas con AI.
+      Escribime y te respondo.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:leandrobenjaminl@hotmail.com" class="contact-link">
+        &#9993; Email
+      </a>
+      <a href="https://github.com/LeandroBenjaminL" target="_blank" rel="noopener" class="contact-link">
+        &#9900; GitHub
+      </a>
+      <a href="https://linkedin.com/in/leandrobenjamin" target="_blank" rel="noopener" class="contact-link">
+        &#9906; LinkedIn
+      </a>
+    </div>
+  </section>
+</Layout>

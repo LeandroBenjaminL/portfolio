@@ -1,0 +1,305 @@
+---
+const { title = 'Leandro Benjamin' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfolio de Leandro Benjamin — Data Engineer & Full-Stack Developer" />
+    <title>{title}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --bg: #faf9f7;
+        --bg-card: #ffffff;
+        --bg-muted: #f3f1ed;
+        --border: #e6e3dd;
+        --text: #2d2a26;
+        --text-secondary: #6b6560;
+        --text-muted: #9e9892;
+        --accent: #e85d75;
+        --accent-hover: #d14a62;
+        --accent-bg: rgba(232, 93, 117, 0.08);
+        --teal: #2d9a8e;
+        --teal-bg: rgba(45, 154, 142, 0.08);
+        --purple: #7c5ce7;
+        --purple-bg: rgba(124, 92, 231, 0.08);
+        --font-base: 'Inter', system-ui, -apple-system, sans-serif;
+        --font-mono: 'JetBrains Mono', monospace;
+        --max-width: 780px;
+        --radius: 12px;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { font-size: 17px; scroll-behavior: smooth; }
+      body {
+        font-family: var(--font-base);
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ── Layout ── */
+      .wrapper {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      /* ── Nav ── */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 0;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      nav .logo {
+        font-weight: 800;
+        font-size: 1.1rem;
+        color: var(--text);
+        text-decoration: none;
+      }
+      nav .links {
+        display: flex;
+        gap: 1.75rem;
+        flex-wrap: wrap;
+      }
+      nav .links a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.92rem;
+        transition: color 0.15s;
+      }
+      nav .links a:hover { color: var(--accent); }
+
+      /* ── Sections ── */
+      section { padding: 5rem 0; }
+      section + section { border-top: 1px solid var(--border); }
+
+      /* ── Hero ── */
+      .hero {
+        padding: 4rem 0 5rem;
+        text-align: left;
+      }
+      .hero .emoji { font-size: 3.5rem; margin-bottom: 1.25rem; display: block; }
+      .hero .greeting {
+        color: var(--accent);
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 0.75rem;
+      }
+      .hero h1 {
+        font-size: 2.8rem;
+        font-weight: 900;
+        line-height: 1.15;
+        margin-bottom: 1.25rem;
+        letter-spacing: -0.75px;
+      }
+      .hero h1 span {
+        background: linear-gradient(135deg, var(--accent), var(--purple));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .hero .tagline {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        max-width: 560px;
+        line-height: 1.65;
+      }
+      .hero .ctas {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+      }
+
+      /* ── Buttons ── */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.65rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.92rem;
+        text-decoration: none;
+        transition: all 0.15s;
+        border: 1.5px solid transparent;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: white;
+      }
+      .btn-primary:hover { background: var(--accent-hover); }
+      .btn-outline {
+        border-color: var(--border);
+        color: var(--text-secondary);
+      }
+      .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+      /* ── Section Headers ── */
+      .section-label {
+        display: inline-block;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--accent);
+        margin-bottom: 0.75rem;
+      }
+      .section-title {
+        font-size: 1.8rem;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        margin-bottom: 2.5rem;
+      }
+
+      /* ── Project Cards ── */
+      .project {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 2rem;
+        transition: border-color 0.15s, box-shadow 0.15s;
+      }
+      .project:hover {
+        border-color: #d4d0c8;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      }
+      .project + .project { margin-top: 1.25rem; }
+      .project .p-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+      .project h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .project h3 a {
+        color: var(--text);
+        text-decoration: none;
+      }
+      .project h3 a:hover { color: var(--accent); }
+      .project .p-badge {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        background: var(--bg-muted);
+        color: var(--text-muted);
+      }
+      .project p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.65; }
+      .project .p-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        color: var(--teal);
+        font-weight: 600;
+        font-size: 0.88rem;
+        text-decoration: none;
+        margin-top: 0.25rem;
+      }
+      .project .p-link:hover { text-decoration: underline; }
+
+      /* ── Tech Tags ── */
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .tag {
+        font-size: 0.8rem;
+        font-weight: 500;
+        padding: 0.35rem 0.85rem;
+        border-radius: 6px;
+        background: var(--bg-muted);
+        color: var(--text-secondary);
+        border: 1px solid var(--border);
+      }
+      .tag.accent { background: var(--accent-bg); color: var(--accent); border-color: transparent; }
+      .tag.teal { background: var(--teal-bg); color: var(--teal); border-color: transparent; }
+      .tag.purple { background: var(--purple-bg); color: var(--purple); border-color: transparent; }
+
+      /* ── Contact ── */
+      .contact-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .contact-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.6rem 1.25rem;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        transition: all 0.15s;
+      }
+      .contact-link:hover { border-color: var(--accent); color: var(--accent); }
+
+      /* ── Footer ── */
+      footer {
+        text-align: center;
+        padding: 2.5rem 0;
+        color: var(--text-muted);
+        font-size: 0.82rem;
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 600px) {
+        .hero h1 { font-size: 2rem; }
+        nav { flex-direction: column; text-align: center; }
+        .hero { text-align: center; }
+        .hero .tagline { margin: 0 auto; }
+        .hero .ctas { justify-content: center; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav>
+        <a href="/portfolio" class="logo">LB</a>
+        <div class="links">
+          <a href="#projects">Proyectos</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contacto</a>
+          <a href="https://github.com/LeandroBenjaminL" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </nav>
+
+      <slot />
+
+      <footer>
+        <p>&copy; 2026 Leandro Benjamin</p>
+      </footer>
+    </div>
+  </body>
+</html>
