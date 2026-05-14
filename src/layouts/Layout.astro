@@ -186,13 +186,28 @@ const { title = 'Leandro Benjamin' } = Astro.props;
         margin-bottom: 2.5rem;
       }
       .Browser {
+        position: relative;
         background: var(--color-light);
-        border-radius: 10px;
-        padding: 2rem;
-        transition: box-shadow 0.15s;
+        border: 2px solid var(--color-dark);
+        border-radius: 20px;
+        padding: 4rem 1.5rem 1.5rem;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
       }
-      .Browser:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
       .Browser + .Browser { margin-top: 2rem; }
+      .Browser::before {
+        position: absolute; content: "";
+        width: 4rem; left: 1.5rem; height: 1.5rem; top: 0.75rem;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 21'%3E%3Ccircle cx='10' cy='10' r='10' fill='%23404040'/%3E%3Ccircle cx='40' cy='10' r='10' fill='%23404040'/%3E%3Ccircle cx='70' cy='10' r='10' fill='%23404040'/%3E%3C/svg%3E");
+      }
+      .Browser::after {
+        position: absolute; content: "";
+        width: 100%; left: 0; right: 0; height: 2px;
+        background-color: var(--color-dark);
+        top: 2rem;
+      }
       .Browser__heading {
         display: block; text-decoration: none;
         color: var(--color-dark);
@@ -200,22 +215,24 @@ const { title = 'Leandro Benjamin' } = Astro.props;
       }
       .Browser p {
         color: var(--color-dark); font-size: 0.95rem;
-        max-width: 580px;
+        max-width: 580px; margin-top: 0;
       }
       .Browser__footer {
-        display: flex; gap: 1.5rem; align-items: center;
-        margin-top: 1rem; font-size: 0.85rem;
+        margin-top: auto; display: flex;
+        justify-content: space-between; align-items: center;
+        padding-top: 0.5rem;
       }
-      .Browser__footer .source {
-        color: var(--color-biscuit); text-decoration: none;
-        font-weight: 500; text-transform: uppercase;
-        letter-spacing: 0.5px; font-size: 0.75rem;
+      .Browser__footer a {
+        color: var(--color-dark); text-decoration: none;
+        font-weight: 600; font-size: 0.85rem;
+        border-bottom: 1.5px solid transparent;
+        transition: border-color 0.1s ease-out;
       }
-      .Browser__footer .read-more {
-        color: var(--color-lilac); text-decoration: none;
-        font-weight: 600;
+      .Browser__footer a:hover { border-color: var(--color-peach); }
+      .Browser--alt {
+        background: var(--color-lilac);
       }
-      .Browser__footer .read-more:hover { text-decoration: underline; }
+      .Browser--alt::before { filter: invert(1) brightness(1.3); }
 
       /* ════════════════════════════════════════════
          SPEAKING / LABS SECTION
