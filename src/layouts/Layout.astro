@@ -75,10 +75,54 @@ const { title = 'Leandro Benjamin — Portfolio' } = Astro.props;
         filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
       }
 
-      /* Contact form styling */
+      /* Contact form — strong styling */
       .contact-form {
-        max-width: 600px;
-        margin: 0 auto;
+        max-width: 580px;
+      }
+      .contact-form .form-group {
+        margin-bottom: 1rem !important;
+      }
+      #contactForm input,
+      #contactForm textarea {
+        width: 100% !important;
+        padding: 0.85rem 1.15rem !important;
+        border-radius: 8px !important;
+        border: 1.5px solid #334155 !important;
+        background: #1e293b !important;
+        color: #f1f5f9 !important;
+        font-family: inherit !important;
+        font-size: 0.95rem !important;
+        outline: none !important;
+        box-shadow: none !important;
+      }
+      #contactForm input:focus,
+      #contactForm textarea:focus {
+        border-color: #c084fc !important;
+        box-shadow: 0 0 0 3px rgba(192,132,252,0.15) !important;
+      }
+      #contactForm textarea {
+        min-height: 100px !important;
+        resize: vertical !important;
+      }
+
+      /* Projects — bigger, better spacing */
+      .project-card {
+        border: 1px solid #334155;
+        border-radius: 16px;
+        overflow: hidden;
+        background: #1e293b;
+        transition: transform 0.2s, border-color 0.2s;
+      }
+      .project-card:hover {
+        transform: translateY(-4px);
+        border-color: #c084fc;
+      }
+      .project-content {
+        padding: 1.5rem;
+      }
+      .project-image .project-icon {
+        font-size: 4rem !important;
+        color: white;
       }
       .contact-form .form-group {
         margin-bottom: 1rem;
