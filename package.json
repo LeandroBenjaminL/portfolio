@@ -1,4 +1,7 @@
 {
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild", "sharp"]
+  },
   "name": "portfolio",
   "type": "module",
   "version": "1.0.0",
@@ -8,6 +11,7 @@
     "build": "astro build",
     "preview": "astro preview"
   },
+  "packageManager": "pnpm@11.1.2",
   "dependencies": {
     "astro": "^5.1.0"
   }
