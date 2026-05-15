@@ -156,13 +156,35 @@ const { title = 'Test' } = Astro.props;
     <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script is:inline src="/portfolio/kan3an.js"></script>
     <script is:inline>
-      // Override form handler — FormSubmit en vez del alert
+      // FormSubmit AJAX — no redirect
       document.addEventListener('DOMContentLoaded', () => {
         const form = document.getElementById('contactForm');
-        if (form) {
-          const clone = form.cloneNode(true);
-          form.parentNode.replaceChild(clone, form);
-        }
+        if (!form) return;
+        const clone = form.cloneNode(true);
+        form.parentNode.replaceChild(clone, form);
+        clone.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const btn = clone.querySelector('button[type="submit"]');
+          const orig = btn.innerHTML;
+          btn.disabled = true;
+          btn.innerHTML = 'Enviando...';
+          try {
+            const res = await fetch('https://formsubmit.co/ajax/leandrobenjaminnn@gmail.com', {
+              method: 'POST',
+              body: new FormData(clone),
+            });
+            if (res.ok) {
+              btn.innerHTML = '&#10003; Enviado';
+              clone.reset();
+              setTimeout(() => { btn.innerHTML = orig; btn.disabled = false; }, 3000);
+            } else {
+              throw new Error();
+            }
+          } catch {
+            btn.innerHTML = 'Error, intentá de nuevo';
+            setTimeout(() => { btn.innerHTML = orig; btn.disabled = false; }, 3000);
+          }
+        });
       });
     </script>
   </body>
