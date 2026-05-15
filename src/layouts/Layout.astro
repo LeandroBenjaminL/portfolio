@@ -47,9 +47,23 @@ const { title = 'Leandro Benjamin' } = Astro.props;
         font-size: 1.1rem;
         line-height: 1.75;
         color: var(--color-dark);
-        background-color: var(--color-light-fade);
+        background: transparent;
+        position: relative;
       }
       ::selection { color: var(--selection-color); background: var(--selection-bg); }
+
+      /* ── Liquid gradient background ── */
+      #liquid-bg {
+        position: fixed; top: 0; left: 0;
+        width: 100%; height: 100%;
+        z-index: 0;
+      }
+      #liquid-bg canvas { display: block; }
+
+      /* ── Content layer ── */
+      .content-layer {
+        position: relative; z-index: 1;
+      }
 
       /* ── Skip link ── */
       .skip-link {
@@ -140,16 +154,8 @@ const { title = 'Leandro Benjamin' } = Astro.props;
          HERO
          ════════════════════════════════════════════ */
       .Hero {
-        background-color: var(--color-light-fade);
+        background: transparent;
         min-height: 100vh; position: relative; overflow: hidden;
-      }
-      .Hero::after {
-        content: "";
-        position: absolute;
-        width: 68%; height: 100%;
-        top: 0; right: 0; bottom: 0;
-        background-color: var(--color-mint);
-        z-index: 0; max-width: 1800px;
       }
       .Hero__inner {
         position: relative; z-index: 1;
@@ -160,7 +166,7 @@ const { title = 'Leandro Benjamin' } = Astro.props;
         padding-left: calc(1rem + 7 * ((100vw - 20rem) / 80));
         padding-right: calc(1rem + 7 * ((100vw - 20rem) / 80));
       }
-      .Hero__content { width: 50%; }
+      .Hero__content { width: 55%; }
       .Hero__eyebrow {
         transform: rotate(-5deg); transform-origin: bottom left;
         font-size: clamp(1.25rem, 2vw, 1.55rem);
@@ -187,7 +193,9 @@ const { title = 'Leandro Benjamin' } = Astro.props;
       }
       .Browser {
         position: relative;
-        background: var(--color-light);
+        background: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
         border: 2px solid var(--color-dark);
         border-radius: 20px;
         padding: 4rem 1.5rem 1.5rem;
@@ -323,7 +331,6 @@ const { title = 'Leandro Benjamin' } = Astro.props;
 
       /* ── Responsive ── */
       @media (max-width: 768px) {
-        .Hero::after { width: 100%; }
         .Hero__inner { flex-direction: column; justify-content: center; }
         .Hero__content { width: 100%; }
         .pad-around-xlg { padding-top: 5rem; padding-bottom: 5rem; }
@@ -337,6 +344,8 @@ const { title = 'Leandro Benjamin' } = Astro.props;
     </style>
   </head>
   <body>
+    <div id="liquid-bg"></div>
+    <div class="content-layer">
     <a href="#main-content" class="skip-link">Skip to content</a>
 
     <header class="Site-head">
@@ -359,5 +368,8 @@ const { title = 'Leandro Benjamin' } = Astro.props;
     <footer class="site-footer">
       <p>&copy; 2026 Leandro Benjamin &middot; <a href="https://github.com/LeandroBenjaminL/portfolio">source</a></p>
     </footer>
+    </div>
+
+    <script is:inline src="/portfolio/liquid-gradient.js"></script>
   </body>
 </html>
