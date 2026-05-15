@@ -77,7 +77,7 @@ const { title = 'Test' } = Astro.props;
 
       /* Contact form styling */
       .contact-form {
-        max-width: 500px;
+        max-width: 600px;
         margin: 0 auto;
       }
       .contact-form .form-group {
@@ -131,6 +131,18 @@ const { title = 'Test' } = Astro.props;
       }
       .about-text p {
         margin-bottom: 1rem;
+      }
+      .about-stats {
+        margin-top: 2.5rem;
+      }
+
+      /* Reduce hero scroll-down spacing */
+      #home {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+      }
+      #about.section {
+        padding-top: 2rem;
       }
 
       /* Section container max width for better readability */
