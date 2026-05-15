@@ -5,65 +5,13 @@ const { title = 'Leandro Benjamin — Portfolio' } = Astro.props;
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <title>{title}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/portfolio/kan3an.css" />
-
-    <style is:global>
-      .main-footer { text-align: center !important; }
-      .main-footer .footer-content { text-align: center !important; justify-content: center !important; padding: 2rem !important; display: block !important; }
-      .main-footer .footer-links { display: none !important; }
-
-      .project-card {
-        display: flex; flex-direction: column;
-        border: 1px solid #334155; border-radius: 16px; overflow: hidden;
-        background: #1e293b; transition: transform 0.2s, border-color 0.2s;
-      }
-      .project-card:hover { transform: translateY(-4px); border-color: #c084fc; }
-      .project-content { display: flex; flex-direction: column; flex: 1; padding: 1.5rem; }
-      .project-description { flex: 1; }
-      .project-tags { margin-top: 0.75rem; }
-      .project-links { margin-top: 0.75rem; }
-
-      .project-card:nth-child(1) .project-image { background: linear-gradient(135deg,#7c3aed,#a78bfa); min-height: 140px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
-      .project-card:nth-child(2) .project-image { background: linear-gradient(135deg,#059669,#34d399); min-height: 140px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
-      .project-card:nth-child(3) .project-image { background: linear-gradient(135deg,#d97706,#fbbf24); min-height: 140px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
-      .project-image .project-icon { font-size: 4rem; color: white; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3)); }
-
-      .contact-form { max-width: 580px; }
-      .contact-form .form-group { margin-bottom: 1rem !important; }
-
-      #contactForm input, #contactForm textarea {
-        width: 100% !important; padding: 0.85rem 1.15rem !important;
-        border-radius: 8px !important; border: 1.5px solid #334155 !important;
-        background: #1e293b !important; color: #f1f5f9 !important;
-        font-family: inherit !important; font-size: 0.95rem !important;
-        outline: none !important; box-shadow: none !important;
-      }
-      #contactForm input:focus, #contactForm textarea:focus {
-        border-color: #c084fc !important; box-shadow: 0 0 0 3px rgba(192,132,252,0.15) !important;
-      }
-      #contactForm textarea { min-height: 100px !important; resize: vertical !important; }
-
-      .hero-description { margin-bottom: 2rem !important; }
-      .hero-buttons { gap: 1rem !important; }
-
-      .projects-grid { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important; gap: 2rem !important; align-items: stretch !important; }
-
-      .about-content { gap: 3rem; }
-      .about-text { margin-bottom: 2rem; }
-      .about-text p { margin-bottom: 1rem; }
-      .about-stats { margin-top: 2.5rem; }
-
-      #home { margin-bottom: 0 !important; padding-bottom: 0 !important; }
-      #about.section { padding-top: 2rem; }
-
-      .section-container { max-width: 900px; margin: 0 auto; }
-    </style>
   </head>
   <body>
     <slot />

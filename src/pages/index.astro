@@ -24,8 +24,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="nav-brand">
         <div class="brand-logo">
           <span class="logo-bracket">&lt;</span>
-          <span class="logo-text">LB</span>
-          <span class="logo-bracket">/&gt;</span>
+          <span class="logo-text">LB</span><span class="logo-bracket">/&gt;</span>
         </div>
       </div>
       <div class="nav-menu" id="navMenu">
@@ -35,267 +34,281 @@ import Layout from '../layouts/Layout.astro';
         <a href="#projects" class="nav-link" data-section="projects"><i class="fas fa-rocket"></i><span class="nav-text">Projects</span></a>
         <a href="#contact" class="nav-link" data-section="contact"><i class="fas fa-envelope"></i><span class="nav-text">Contact</span></a>
       </div>
-      <button class="mobile-menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+      <div class="nav-controls">
+        <button class="theme-toggle" id="themeToggle" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+        <button class="menu-toggle" id="menuToggle" title="Menu"><span></span><span></span><span></span></button>
+      </div>
     </nav>
   </header>
 
-  <!-- ═══ HOME ═══ -->
-  <section id="home" class="hero-section">
-    <div class="hero-background">
-      <div class="code-grid-bg"></div>
-      <div class="floating-particles" id="particles"></div>
-    </div>
-    <div class="hero-container">
-      <div class="hero-content">
-        <div class="hero-greeting">
-          <span class="greeting-text">Hola, soy</span>
-          <span class="greeting-cursor">|</span>
-        </div>
-        <h1 class="hero-title">
-          <span class="title-bracket">&lt;</span>
-          <span class="title-name">Leandro Benjamin</span>
-          <span class="title-bracket">/&gt;</span>
-        </h1>
-        <div class="hero-subtitle">
-          <span class="subtitle-code">const</span>
-          <span class="subtitle-role">role</span>
-          <span class="subtitle-equals">=</span>
-          <span class="subtitle-value">Data Engineer &amp; Full-Stack Developer</span>
-          <span class="subtitle-semi">;</span>
-        </div>
-        <p class="hero-description">
-          Transformo datos crudos en pipelines robustos, APIs en productos y c&oacute;digo en ecosistemas.
-        </p>
-        <div class="hero-buttons">
-          <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Contacto</a>
-          <a href="#projects" class="btn btn-secondary"><i class="fas fa-rocket"></i> Proyectos</a>
-        </div>
+  <main class="main-content">
+    <!-- ═══ HERO ═══ -->
+    <section id="home" class="hero-section">
+      <div class="hero-background">
+        <div class="code-grid-bg"></div>
+        <div class="floating-particles" id="particles"></div>
       </div>
-    </div>
-  </section>
-
-  <!-- ═══ ABOUT ═══ -->
-  <section id="about" class="about-section section">
-    <div class="section-container">
-      <div class="section-header">
-        <span class="section-number">01</span>
-        <h2 class="section-title">
-          <span class="title-bracket">&lt;</span>
-          <span class="title-text">About Me</span>
-          <span class="title-bracket">/&gt;</span>
-        </h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="about-content">
-        <div class="about-text">
-          <p>
-            Soy un Data Engineer y Full-Stack Developer. Mi lenguaje principal es Python — 
-            lo uso para construir pipelines ETL, APIs con FastAPI, ecosistemas de agentes AI 
-            y todo lo que haya en el medio. Tambi&eacute;n trabajo con PostgreSQL, Docker, AWS 
-            y dise&ntilde;o interfaces modernas con React y Astro.
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-greeting">
+            <span class="greeting-text">Hola, soy</span>
+            <span class="greeting-cursor">|</span>
+          </div>
+          <h1 class="hero-name" id="heroName">
+            <span class="name-prefix">const</span>
+            <span class="name-operator">=</span>
+            <span class="name-value">Leandro</span>
+            <span class="name-suffix">;</span>
+          </h1>
+          <div class="hero-title">
+            <span class="title-prefix">//</span>
+            <span class="title-text">Data Engineer &amp; Full-Stack Developer</span>
+          </div>
+          <p class="hero-description">
+            Transformo datos en pipelines, APIs en productos y c&oacute;digo en ecosistemas.
           </p>
-          <p>
-            Cada proyecto es una excusa para aprender algo nuevo: una arquitectura serverless, un agente
-            aut&oacute;nomo o un dashboard que cuenta historias con datos.
-          </p>
-          <div class="about-stats">
-            <div class="stat-item"><span class="stat-number" data-count="6">0</span><span class="stat-label">Proyectos</span></div>
-            <div class="stat-item"><span class="stat-number" data-count="2">0</span><span class="stat-label">A&ntilde;os codeando</span></div>
-            <div class="stat-item"><span class="stat-number" data-count="1">0</span><span class="stat-label">Ecosistemas AI</span></div>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary"><span>Contacto</span><i class="fas fa-arrow-right"></i></a>
+            <a href="#projects" class="btn btn-secondary"><span>Proyectos</span><i class="fas fa-code"></i></a>
+          </div>
+          <div class="hero-social">
+            <a href="https://github.com/LeandroBenjaminL" target="_blank" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/leandrobenjamin" target="_blank" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
-        <div class="about-code">
-          <div class="code-block">
-            <div class="code-header"><span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span></div>
-            <pre><code>
-const developer = &#123;
-  name: 'Leandro Benjamin',
-  role: 'Data Engineer',
-  skills: ['Python', 'FastAPI', 'PostgreSQL'],
-  passion: 'Construir pipelines',
-&#125;;
-            </code></pre>
+        <div class="hero-image-wrapper">
+          <div class="hero-image-container">
+            <div class="profile-image-glow"></div>
+            <div class="profile-image-frame">
+              <div class="profile-image" id="profileImage">
+                <div class="profile-placeholder"><i class="fas fa-code"></i></div>
+              </div>
+            </div>
+            <div class="floating-badge badge-1">
+              <i class="fab fa-python"></i>
+              <div class="badge-content">
+                <span class="badge-title">Python</span>
+                <span class="badge-libs">FastAPI, Pandas, SQL</span>
+              </div>
+            </div>
+            <div class="floating-badge badge-2">
+              <i class="fas fa-database"></i>
+              <div class="badge-content">
+                <span class="badge-title">PostgreSQL</span>
+                <span class="badge-libs">SQL, Docker, AWS</span>
+              </div>
+            </div>
+            <div class="floating-badge badge-3">
+              <i class="fas fa-brain"></i>
+              <div class="badge-content">
+                <span class="badge-title">AI / LLMs</span>
+                <span class="badge-libs">MCP, Agents, Routing</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+      <div class="scroll-indicator">
+        <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+        <span class="scroll-text">Scroll Down</span>
+      </div>
+    </section>
 
-  <!-- ═══ SKILLS ═══ -->
-  <section id="skills" class="skills-section section">
-    <div class="section-container">
-      <div class="section-header">
-        <span class="section-number">02</span>
-        <h2 class="section-title">
-          <span class="title-bracket">&lt;</span>
-          <span class="title-text">Skills</span>
-          <span class="title-bracket">/&gt;</span>
-        </h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3 class="category-title">Backend &amp; Datos</h3>
-          <div class="skill-items">
-            <div class="skill-item" data-skill="Python" data-percent="95">
-              <div class="skill-header"><span class="skill-name">Python</span><span class="skill-percent">0%</span></div>
-              <div class="skill-bar"><div class="skill-progress"></div></div>
+    <!-- ═══ ABOUT ═══ -->
+    <section id="about" class="section about-section fade-in">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-number">01</span>
+          <h2 class="section-title"><span class="title-bracket">&lt;</span><span class="title-text">About Me</span><span class="title-bracket">/&gt;</span></h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="about-content">
+          <div class="about-text-wrapper">
+            <div class="about-intro">
+              <p class="about-text">
+                Soy Data Engineer y Full-Stack Developer. Mi lenguaje principal es Python y lo uso para construir 
+                pipelines ETL, APIs con FastAPI, y ecosistemas de agentes AI. Tambi&eacute;n trabajo con PostgreSQL, 
+                Docker, AWS, y dise&ntilde;o interfaces con React y Astro.
+              </p>
             </div>
-            <div class="skill-item" data-skill="FastAPI" data-percent="85">
-              <div class="skill-header"><span class="skill-name">FastAPI</span><span class="skill-percent">0%</span></div>
-              <div class="skill-bar"><div class="skill-progress"></div></div>
-            </div>
-            <div class="skill-item" data-skill="Pandas" data-percent="80">
-              <div class="skill-header"><span class="skill-name">Pandas / NumPy</span><span class="skill-percent">0%</span></div>
-              <div class="skill-bar"><div class="skill-progress"></div></div>
-            </div>
-            <div class="skill-item" data-skill="PostgreSQL" data-percent="80">
-              <div class="skill-header"><span class="skill-name">PostgreSQL / SQL</span><span class="skill-percent">0%</span></div>
-              <div class="skill-bar"><div class="skill-progress"></div></div>
+            <div class="about-stats">
+              <div class="stat-item">
+                <div class="stat-number" data-count="6">0</div>
+                <div class="stat-label">Proyectos</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-count="2">0</div>
+                <div class="stat-label">A&ntilde;os codeando</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-count="1">0</div>
+                <div class="stat-label">Ecosistemas AI</div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="skill-category">
-          <h3 class="category-title">Frontend</h3>
-          <div class="skill-items">
-            <div class="skill-item" data-skill="Astro" data-percent="75">
-              <div class="skill-header"><span class="skill-name">Astro</span><span class="skill-percent">0%</span></div>
-              <div class="skill-bar"><div class="skill-progress"></div></div>
-            </div>
-            <div class="skill-item" data-skill="React" data-percent="75">
-              <div class="skill-header"><span class="skill-name">React</span><span class="skill-percent">0%</span></div>
-              <div class="skill-bar"><div class="skill-progress"></div></div>
-            </div>
-            <div class="skill-item" data-skill="TypeScript" data-percent="70">
-              <div class="skill-header"><span class="skill-name">TypeScript</span><span class="skill-percent">0%</span></div>
-              <div class="skill-bar"><div class="skill-progress"></div></div>
-            </div>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3 class="category-title">DevOps &amp; AI</h3>
-          <div class="skill-items">
-            <div class="skill-item" data-skill="Docker" data-percent="70">
-              <div class="skill-header"><span class="skill-name">Docker</span><span class="skill-percent">0%</span></div>
-              <div class="skill-bar"><div class="skill-progress"></div></div>
-            </div>
-            <div class="skill-item" data-skill="AWS" data-percent="65">
-              <div class="skill-header"><span class="skill-name">AWS</span><span class="skill-percent">0%</span></div>
-              <div class="skill-bar"><div class="skill-progress"></div></div>
-            </div>
-            <div class="skill-item" data-skill="MCP" data-percent="80">
-              <div class="skill-header"><span class="skill-name">MCP / LLMs</span><span class="skill-percent">0%</span></div>
-              <div class="skill-bar"><div class="skill-progress"></div></div>
+          <div class="about-image-wrapper">
+            <div class="about-image-container">
+              <div class="code-block">
+                <div class="code-line"><span class="code-keyword">const</span> <span class="code-variable">developer</span> <span class="code-operator">=</span> <span class="code-brace">&#123;</span></div>
+                <div class="code-line indent"><span class="code-property">name</span><span class="code-operator">:</span> <span class="code-string">'Leandro Benjamin'</span><span class="code-comma">,</span></div>
+                <div class="code-line indent"><span class="code-property">role</span><span class="code-operator">:</span> <span class="code-string">'Data Engineer'</span><span class="code-comma">,</span></div>
+                <div class="code-line indent"><span class="code-property">skills</span><span class="code-operator">:</span> <span class="code-bracket">[</span><span class="code-string">'Python'</span><span class="code-comma">,</span> <span class="code-string">'FastAPI'</span><span class="code-comma">,</span> <span class="code-string">'SQL'</span><span class="code-bracket">]</span><span class="code-comma">,</span></div>
+                <div class="code-line indent"><span class="code-property">passion</span><span class="code-operator">:</span> <span class="code-string">'Construir pipelines'</span></div>
+                <div class="code-line"><span class="code-brace">&#125;</span><span class="code-semicolon">;</span></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══ PROJECTS ═══ -->
-  <section id="projects" class="projects-section section">
-    <div class="section-container">
-      <div class="section-header">
-        <span class="section-number">03</span>
-        <h2 class="section-title">
-          <span class="title-bracket">&lt;</span>
-          <span class="title-text">Projects</span>
-          <span class="title-bracket">/&gt;</span>
-        </h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="projects-grid">
-        <!-- Datlas -->
-        <div class="project-card">
-          <div class="project-image">
-            <div class="project-icon">&#9889;</div>
-          </div>
-          <div class="project-content">
-            <span class="project-category">Destacado</span>
-            <h3 class="project-title">Datlas</h3>
-            <p class="project-description">Plataforma de carga, limpieza y exploraci&oacute;n de datasets. Detecci&oacute;n autom&aacute;tica de nulos y outliers. FastAPI + Pandas + PostgreSQL + AWS Lambda + Astro.</p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span><span class="project-tag">FastAPI</span><span class="project-tag">PostgreSQL</span><span class="project-tag">AWS</span><span class="project-tag">Docker</span><span class="project-tag">Astro</span>
+    <!-- ═══ SKILLS ═══ -->
+    <section id="skills" class="section skills-section fade-in">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-number">02</span>
+          <h2 class="section-title"><span class="title-bracket">&lt;</span><span class="title-text">Skills</span><span class="title-bracket">/&gt;</span></h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3 class="category-title">Backend &amp; Datos</h3>
+            <div class="skill-items">
+              <div class="skill-item" data-skill="Python" data-percent="95"><div class="skill-header"><span class="skill-name">Python</span><span class="skill-percent">0%</span></div><div class="skill-bar"><div class="skill-progress"></div></div></div>
+              <div class="skill-item" data-skill="FastAPI" data-percent="85"><div class="skill-header"><span class="skill-name">FastAPI</span><span class="skill-percent">0%</span></div><div class="skill-bar"><div class="skill-progress"></div></div></div>
+              <div class="skill-item" data-skill="Pandas" data-percent="80"><div class="skill-header"><span class="skill-name">Pandas / NumPy</span><span class="skill-percent">0%</span></div><div class="skill-bar"><div class="skill-progress"></div></div></div>
+              <div class="skill-item" data-skill="PostgreSQL" data-percent="80"><div class="skill-header"><span class="skill-name">PostgreSQL / SQL</span><span class="skill-percent">0%</span></div><div class="skill-bar"><div class="skill-progress"></div></div></div>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/LeandroBenjaminL/datlas" target="_blank" rel="noopener" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+          <div class="skill-category">
+            <h3 class="category-title">Frontend</h3>
+            <div class="skill-items">
+              <div class="skill-item" data-skill="Astro" data-percent="75"><div class="skill-header"><span class="skill-name">Astro</span><span class="skill-percent">0%</span></div><div class="skill-bar"><div class="skill-progress"></div></div></div>
+              <div class="skill-item" data-skill="React" data-percent="75"><div class="skill-header"><span class="skill-name">React</span><span class="skill-percent">0%</span></div><div class="skill-bar"><div class="skill-progress"></div></div></div>
+              <div class="skill-item" data-skill="TypeScript" data-percent="70"><div class="skill-header"><span class="skill-name">TypeScript</span><span class="skill-percent">0%</span></div><div class="skill-bar"><div class="skill-progress"></div></div></div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3 class="category-title">DevOps &amp; AI</h3>
+            <div class="skill-items">
+              <div class="skill-item" data-skill="Docker" data-percent="70"><div class="skill-header"><span class="skill-name">Docker</span><span class="skill-percent">0%</span></div><div class="skill-bar"><div class="skill-progress"></div></div></div>
+              <div class="skill-item" data-skill="AWS" data-percent="65"><div class="skill-header"><span class="skill-name">AWS</span><span class="skill-percent">0%</span></div><div class="skill-bar"><div class="skill-progress"></div></div></div>
+              <div class="skill-item" data-skill="MCP" data-percent="80"><div class="skill-header"><span class="skill-name">MCP / LLMs</span><span class="skill-percent">0%</span></div><div class="skill-bar"><div class="skill-progress"></div></div></div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- LEND.AI -->
-        <div class="project-card">
-          <div class="project-image">
-            <div class="project-icon">&#129504;</div>
-          </div>
-          <div class="project-content">
-            <span class="project-category">AI Ecosystem</span>
-            <h3 class="project-title">LEND.AI</h3>
-            <p class="project-description">Ecosistema de agentes de IA con routing inteligente de modelos, skills modulares y servidores MCP. Dise&ntilde;ado como plataforma extensible para amplificar el trabajo con LLMs.</p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span><span class="project-tag">MCP</span><span class="project-tag">LLMs</span><span class="project-tag">SQLite</span><span class="project-tag">YAML</span>
+    <!-- ═══ PROJECTS ═══ -->
+    <section id="projects" class="section projects-section fade-in">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-number">03</span>
+          <h2 class="section-title"><span class="title-bracket">&lt;</span><span class="title-text">Projects</span><span class="title-bracket">/&gt;</span></h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="projects-grid">
+          <!-- Datlas -->
+          <div class="project-card">
+            <div class="project-image">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/LeandroBenjaminL/datlas" target="_blank" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+              <div class="project-placeholder"><i class="fas fa-database"></i></div>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/LeandroBenjaminL/lend-ai" target="_blank" rel="noopener" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+            <div class="project-content">
+              <h3 class="project-title">Datlas</h3>
+              <p class="project-description">Carga, limpieza y exploraci&oacute;n de datasets. FastAPI + Pandas + PostgreSQL + AWS Lambda + Astro.</p>
+              <div class="project-tags">
+                <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">Astro</span>
+              </div>
+            </div>
+          </div>
+          <!-- LEND.AI -->
+          <div class="project-card">
+            <div class="project-image">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/LeandroBenjaminL/lend-ai" target="_blank" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+              <div class="project-placeholder"><i class="fas fa-brain"></i></div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">LEND.AI</h3>
+              <p class="project-description">Ecosistema de agentes de IA con routing inteligente de modelos, skills modulares y servidores MCP.</p>
+              <div class="project-tags">
+                <span class="tag">Python</span><span class="tag">MCP</span><span class="tag">LLMs</span><span class="tag">SQLite</span><span class="tag">YAML</span>
+              </div>
+            </div>
+          </div>
+          <!-- Crypto Tracker -->
+          <div class="project-card">
+            <div class="project-image">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/LeandroBenjaminL/crypto-tracker" target="_blank" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+              <div class="project-placeholder"><i class="fas fa-chart-line"></i></div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Crypto Tracker</h3>
+              <p class="project-description">Rastreador de criptomonedas en tiempo real con APIs de mercado, historial de precios y portfolio personal.</p>
+              <div class="project-tags">
+                <span class="tag">Python</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">APIs</span>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Crypto Tracker -->
-        <div class="project-card">
-          <div class="project-image">
-            <div class="project-icon">&#128202;</div>
-          </div>
-          <div class="project-content">
-            <span class="project-category">Full-Stack</span>
-            <h3 class="project-title">Crypto Tracker</h3>
-            <p class="project-description">Rastreador de criptomonedas en tiempo real con APIs de mercado, historial de precios y portfolio personal. Python + React + Node.js.</p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span><span class="project-tag">React</span><span class="project-tag">Node.js</span><span class="project-tag">APIs</span>
+    <!-- ═══ CONTACT ═══ -->
+    <section id="contact" class="section contact-section fade-in">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-number">04</span>
+          <h2 class="section-title"><span class="title-bracket">&lt;</span><span class="title-text">Contact</span><span class="title-bracket">/&gt;</span></h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-details">
+                <h4 class="contact-label">Email</h4>
+                <a href="mailto:leandrobenjaminnn@gmail.com" class="contact-value">leandrobenjaminnn@gmail.com</a>
+              </div>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/LeandroBenjaminL/crypto-tracker" target="_blank" rel="noopener" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-            </div>
           </div>
+          <form class="contact-form" id="contactForm">
+            <div class="form-group"><input type="text" class="form-input" placeholder="Nombre" required /></div>
+            <div class="form-group"><input type="email" class="form-input" placeholder="Email" required /></div>
+            <div class="form-group"><input type="text" class="form-input" placeholder="Asunto" required /></div>
+            <div class="form-group"><textarea class="form-input form-textarea" rows="5" placeholder="Mensaje" required></textarea></div>
+            <button type="submit" class="btn btn-primary btn-submit"><span>Enviar Mensaje</span><i class="fas fa-paper-plane"></i></button>
+          </form>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ═══ CONTACT ═══ -->
-  <section id="contact" class="contact-section section">
-    <div class="section-container">
-      <div class="section-header">
-        <span class="section-number">04</span>
-        <h2 class="section-title">
-          <span class="title-bracket">&lt;</span>
-          <span class="title-text">Contact</span>
-          <span class="title-bracket">/&gt;</span>
-        </h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="contact-content">
-        <form id="contactForm" class="contact-form"  method="POST" style="width:100%; max-width:580px;">
-          <div class="form-group"><input type="text" name="nombre" placeholder="Nombre" required /></div>
-          <div class="form-group"><input type="email" name="email" placeholder="Email" required /></div>
-          <div class="form-group"><textarea name="mensaje" placeholder="Mensaje" rows="4" required></textarea></div>
-          <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Enviar</button>
-        </form>
-        <div style="margin-top:1.5rem; width:100%; max-width:580px; background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:1.25rem 1.5rem;">
-          <p style="color:var(--text-secondary); font-size:0.9rem; line-height:1.65; margin-bottom:0.75rem;">
-            Siempre abierto a colaborar en proyectos de datos, pipelines o ideas con IA.
-          </p>
-          <div class="contact-item" style="font-size:0.9rem;"><i class="fas fa-envelope" style="color:var(--primary);"></i><span>leandrobenjaminnn@gmail.com</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="main-footer">
-    <div class="footer-content">
-      <p>Leandro Benjamin &middot; Data Engineer</p>
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-text-wrapper">
+          <p class="footer-text">
+            <span class="footer-copyright">Leandro Benjamin</span>
+            <span class="footer-divider">&middot;</span>
+            <span class="footer-built">Data Engineer</span>
+          </p>
+        </div>
+      </div>
     </div>
   </footer>
 </Layout>
