@@ -12,6 +12,145 @@ const { title = 'Leandro Benjamin — Portfolio' } = Astro.props;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/portfolio/kan3an.css" />
+
+    <style is:global>
+      /* ── Fixes ── */
+      .main-footer {
+        text-align: center !important;
+      }
+      .main-footer .footer-content {
+        text-align: center !important;
+        justify-content: center !important;
+        padding: 2rem !important;
+        display: block !important;
+      }
+      .main-footer .footer-links { display: none !important; }
+
+      .project-card {
+        display: flex;
+        flex-direction: column;
+      }
+      .project-content {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+      .project-description {
+        flex: 1;
+      }
+      .project-tags {
+        margin-top: 0.75rem;
+      }
+      .project-links {
+        margin-top: 0.75rem;
+      }
+      /* Project image gradients as "images" */
+      .project-card:nth-child(1) .project-image {
+        background: linear-gradient(135deg, #7c3aed, #a78bfa);
+        min-height: 140px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .project-card:nth-child(2) .project-image {
+        background: linear-gradient(135deg, #059669, #34d399);
+        min-height: 140px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .project-card:nth-child(3) .project-image {
+        background: linear-gradient(135deg, #d97706, #fbbf24);
+        min-height: 140px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .project-image .project-icon {
+        font-size: 3.5rem;
+        color: white;
+        filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+      }
+
+      /* Contact form styling */
+      .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      .contact-form .form-group {
+        margin-bottom: 1rem;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 0.85rem 1.15rem;
+        border-radius: 10px;
+        border: 1.5px solid var(--border);
+        background: var(--bg-card);
+        color: var(--text-primary);
+        font-family: inherit;
+        font-size: 0.95rem;
+        outline: none;
+        transition: all 0.2s;
+      }
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(192,132,252,0.15);
+      }
+      .contact-form textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      /* Hero buttons spacing */
+      .hero-description {
+        margin-bottom: 2rem !important;
+      }
+      .hero-buttons {
+        gap: 1rem !important;
+      }
+
+      /* Projects grid */
+      .projects-grid {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+        gap: 2rem !important;
+        align-items: stretch !important;
+      }
+
+      /* About text spacing */
+      .about-content {
+        gap: 3rem;
+      }
+      .about-text {
+        margin-bottom: 2rem;
+      }
+      .about-text p {
+        margin-bottom: 1rem;
+      }
+      .about-stats {
+        margin-top: 2.5rem;
+      }
+
+      /* Reduce hero scroll-down spacing */
+      #home {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+      }
+      #about.section {
+        padding-top: 2rem;
+      }
+
+      /* Section container max width for better readability */
+      .section-container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+    </style>
   </head>
   <body>
     <slot />
