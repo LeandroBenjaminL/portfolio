@@ -12,6 +12,71 @@ const { title = 'Test' } = Astro.props;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/portfolio/kan3an.css" />
+
+    <style is:global>
+      /* ── Fixes ── */
+      .main-footer .footer-content {
+        text-align: center;
+        padding: 2rem;
+      }
+      .main-footer .footer-links { display: none; }
+
+      .project-card {
+        display: flex;
+        flex-direction: column;
+      }
+      .project-content {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+      .project-tags { margin-top: auto; padding-top: 1rem; }
+      .project-links { margin-top: 0.75rem; }
+
+      .contact-form {
+        max-width: 480px;
+      }
+      .contact-form .form-group {
+        margin-bottom: 1rem;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: var(--bg-card);
+        color: var(--text-primary);
+        font-family: inherit;
+        font-size: 0.95rem;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        border-color: var(--primary);
+      }
+      .contact-form textarea { resize: vertical; }
+
+      .hero-description {
+        margin-bottom: 2rem;
+      }
+      .hero-buttons {
+        gap: 1rem;
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+        align-items: stretch;
+      }
+      .project-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 120px;
+      }
+    </style>
   </head>
   <body>
     <slot />
