@@ -480,6 +480,78 @@ const { title = 'Leandro Benjamin' } = Astro.props;
         .Card__type { margin-bottom: 0.5rem; }
         .Browser__footer { flex-direction: column; gap: 0.25rem; align-items: flex-start; }
       }
+
+      /* ── Scroll Reveal ── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ── Counters ── */
+      .stats-grid {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        flex-wrap: wrap;
+        padding: 3rem 0;
+      }
+      .stat-item {
+        text-align: center;
+      }
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--color-dark);
+        line-height: 1;
+        letter-spacing: -1px;
+      }
+      .stat-label {
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--color-biscuit);
+        margin-top: 0.5rem;
+      }
+
+      /* ── Skill Bars ── */
+      .skill-bar-item {
+        margin-bottom: 1.25rem;
+      }
+      .skill-bar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 0.4rem;
+      }
+      .skill-bar-name {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--color-dark);
+      }
+      .skill-bar-pct {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--color-lilac);
+      }
+      .skill-bar-track {
+        width: 100%;
+        height: 8px;
+        background: var(--color-oat);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .skill-bar-fill {
+        height: 100%;
+        border-radius: 4px;
+        background: linear-gradient(90deg, var(--color-lilac), var(--color-mint));
+        width: 0%;
+      }
     </style>
   </head>
   <body>
@@ -493,7 +565,7 @@ const { title = 'Leandro Benjamin' } = Astro.props;
         <nav>
           <ul class="nav__list">
             <li class="nav__item"><a href="#projects">projects</a></li>
-            <li class="nav__item"><a href="#tools">stack</a></li>
+            <li class="nav__item"><a href="#skills">skills</a></li>
             <li class="nav__item"><a href="#contact">contact</a></li>
           </ul>
         </nav>
@@ -513,5 +585,6 @@ const { title = 'Leandro Benjamin' } = Astro.props;
     <script is:inline src="/portfolio/liquid-gradient.js"></script>
     <script is:inline src="https://cdn.jsdelivr.net/npm/animejs@4.4.1/dist/bundles/anime.umd.min.js"></script>
     <script is:inline src="/portfolio/scramble.js"></script>
+    <script is:inline src="/portfolio/integrations.js"></script>
   </body>
 </html>

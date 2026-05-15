@@ -21,8 +21,32 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </header>
 
+  <!-- ═══════════════════════ STATS ═══════════════════════ -->
+  <section class="section pad-around-lg reveal">
+    <div class="wrapper">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number counter" data-count="6" data-suffix="+">0</div>
+          <div class="stat-label">Proyectos</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number counter" data-count="4" data-suffix="+">0</div>
+          <div class="stat-label">A&ntilde;os codificando</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number counter" data-count="3" data-suffix="">0</div>
+          <div class="stat-label">Ecosistemas AI</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number counter" data-count="20" data-suffix="+">0</div>
+          <div class="stat-label">Tecnolog&iacute;as</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══════════════════════ PROYECTOS ═══════════════════════ -->
-  <section id="projects" class="Posts-intro pad-around-xlg">
+  <section id="projects" class="Posts-intro pad-around-xlg reveal">
     <div class="wrapper">
       <h2 class="Posts-intro__heading scramble">Proyectos.</h2>
 
@@ -75,35 +99,63 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- ═══════════════════════ HERRAMIENTAS ═══════════════════════ -->
-  <section id="tools" class="section pad-around-lg">
-    <div class="wrapper" style="text-align:center;">
-      <h2 class="scramble" style="font-size:clamp(2.2rem,5vw,3.5rem); font-weight:700; line-height:1.2; margin-bottom:2rem;">Stack.</h2>
-      <div style="display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:center; max-width:600px; margin:0 auto;">
-        <span class="tag accent" style="font-size:0.9rem; padding:0.5rem 1rem;">Python</span>
-        <span class="tag teal" style="font-size:0.9rem; padding:0.5rem 1rem;">FastAPI</span>
-        <span class="tag" style="font-size:0.9rem; padding:0.5rem 1rem;">Pandas</span>
-        <span class="tag" style="font-size:0.9rem; padding:0.5rem 1rem;">NumPy</span>
-        <span class="tag" style="font-size:0.9rem; padding:0.5rem 1rem;">PostgreSQL</span>
-        <span class="tag" style="font-size:0.9rem; padding:0.5rem 1rem;">SQLite</span>
-        <span class="tag purple" style="font-size:0.9rem; padding:0.5rem 1rem;">Astro</span>
-        <span class="tag accent" style="font-size:0.9rem; padding:0.5rem 1rem;">React</span>
-        <span class="tag teal" style="font-size:0.9rem; padding:0.5rem 1rem;">TypeScript</span>
-        <span class="tag" style="font-size:0.9rem; padding:0.5rem 1rem;">HTML/CSS</span>
-        <span class="tag" style="font-size:0.9rem; padding:0.5rem 1rem;">JavaScript</span>
-        <span class="tag" style="font-size:0.9rem; padding:0.5rem 1rem;">Docker</span>
-        <span class="tag" style="font-size:0.9rem; padding:0.5rem 1rem;">AWS</span>
-        <span class="tag teal" style="font-size:0.9rem; padding:0.5rem 1rem;">GitHub Actions</span>
-        <span class="tag" style="font-size:0.9rem; padding:0.5rem 1rem;">Linux</span>
-        <span class="tag" style="font-size:0.9rem; padding:0.5rem 1rem;">Git</span>
-        <span class="tag purple" style="font-size:0.9rem; padding:0.5rem 1rem;">MCP</span>
-        <span class="tag accent" style="font-size:0.9rem; padding:0.5rem 1rem;">LLMs</span>
+  <!-- ═══════════════════════ SKILLS ═══════════════════════ -->
+  <section id="skills" class="section pad-around-lg reveal">
+    <div class="wrapper" style="max-width:500px;">
+      <h2 class="scramble" style="font-size:clamp(2.2rem,5vw,3.5rem); font-weight:700; line-height:1.2; margin-bottom:2.5rem;">Skills.</h2>
+
+      <div class="skill-bar-item" data-pct="95">
+        <div class="skill-bar-header">
+          <span class="skill-bar-name">Python</span>
+          <span class="skill-bar-pct">0%</span>
+        </div>
+        <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+      </div>
+
+      <div class="skill-bar-item" data-pct="85">
+        <div class="skill-bar-header">
+          <span class="skill-bar-name">FastAPI / APIs</span>
+          <span class="skill-bar-pct">0%</span>
+        </div>
+        <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+      </div>
+
+      <div class="skill-bar-item" data-pct="80">
+        <div class="skill-bar-header">
+          <span class="skill-bar-name">PostgreSQL / SQL</span>
+          <span class="skill-bar-pct">0%</span>
+        </div>
+        <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+      </div>
+
+      <div class="skill-bar-item" data-pct="75">
+        <div class="skill-bar-header">
+          <span class="skill-bar-name">Docker / AWS</span>
+          <span class="skill-bar-pct">0%</span>
+        </div>
+        <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+      </div>
+
+      <div class="skill-bar-item" data-pct="70">
+        <div class="skill-bar-header">
+          <span class="skill-bar-name">React / Astro</span>
+          <span class="skill-bar-pct">0%</span>
+        </div>
+        <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+      </div>
+
+      <div class="skill-bar-item" data-pct="65">
+        <div class="skill-bar-header">
+          <span class="skill-bar-name">MCP / LLMs</span>
+          <span class="skill-bar-pct">0%</span>
+        </div>
+        <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════ CARRUSEL ═══════════════════════ -->
-  <section id="projects-showcase" class="section carousel-section pad-around-xlg">
+  <section id="projects-showcase" class="section carousel-section pad-around-xlg reveal">
     <h2 class="Posts-intro__heading" style="text-align:center; margin-bottom:3rem;">Proyectos en foco.</h2>
     <div class="co-carousel-wrap">
       <div class="swiper co-carousel">
