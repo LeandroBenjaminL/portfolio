@@ -14,186 +14,55 @@ const { title = 'Leandro Benjamin — Portfolio' } = Astro.props;
     <link rel="stylesheet" href="/portfolio/kan3an.css" />
 
     <style is:global>
-      /* ── Fixes ── */
-      .main-footer {
-        text-align: center !important;
-      }
-      .main-footer .footer-content {
-        text-align: center !important;
-        justify-content: center !important;
-        padding: 2rem !important;
-        display: block !important;
-      }
+      .main-footer { text-align: center !important; }
+      .main-footer .footer-content { text-align: center !important; justify-content: center !important; padding: 2rem !important; display: block !important; }
       .main-footer .footer-links { display: none !important; }
 
       .project-card {
-        display: flex;
-        flex-direction: column;
+        display: flex; flex-direction: column;
+        border: 1px solid #334155; border-radius: 16px; overflow: hidden;
+        background: #1e293b; transition: transform 0.2s, border-color 0.2s;
       }
-      .project-content {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-      }
-      .project-description {
-        flex: 1;
-      }
-      .project-tags {
-        margin-top: 0.75rem;
-      }
-      .project-links {
-        margin-top: 0.75rem;
-      }
-      /* Project image gradients as "images" */
-      .project-card:nth-child(1) .project-image {
-        background: linear-gradient(135deg, #7c3aed, #a78bfa);
-        min-height: 140px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .project-card:nth-child(2) .project-image {
-        background: linear-gradient(135deg, #059669, #34d399);
-        min-height: 140px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .project-card:nth-child(3) .project-image {
-        background: linear-gradient(135deg, #d97706, #fbbf24);
-        min-height: 140px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .project-image .project-icon {
-        font-size: 3.5rem;
-        color: white;
-        filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
-      }
+      .project-card:hover { transform: translateY(-4px); border-color: #c084fc; }
+      .project-content { display: flex; flex-direction: column; flex: 1; padding: 1.5rem; }
+      .project-description { flex: 1; }
+      .project-tags { margin-top: 0.75rem; }
+      .project-links { margin-top: 0.75rem; }
 
-      /* Contact form — strong styling */
-      .contact-form {
-        max-width: 580px;
-      }
-      .contact-form .form-group {
-        margin-bottom: 1rem !important;
-      }
-      #contactForm input,
-      #contactForm textarea {
-        width: 100% !important;
-        padding: 0.85rem 1.15rem !important;
-        border-radius: 8px !important;
-        border: 1.5px solid #334155 !important;
-        background: #1e293b !important;
-        color: #f1f5f9 !important;
-        font-family: inherit !important;
-        font-size: 0.95rem !important;
-        outline: none !important;
-        box-shadow: none !important;
-      }
-      #contactForm input:focus,
-      #contactForm textarea:focus {
-        border-color: #c084fc !important;
-        box-shadow: 0 0 0 3px rgba(192,132,252,0.15) !important;
-      }
-      #contactForm textarea {
-        min-height: 100px !important;
-        resize: vertical !important;
-      }
+      .project-card:nth-child(1) .project-image { background: linear-gradient(135deg,#7c3aed,#a78bfa); min-height: 140px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+      .project-card:nth-child(2) .project-image { background: linear-gradient(135deg,#059669,#34d399); min-height: 140px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+      .project-card:nth-child(3) .project-image { background: linear-gradient(135deg,#d97706,#fbbf24); min-height: 140px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+      .project-image .project-icon { font-size: 4rem; color: white; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3)); }
 
-      /* Projects — bigger, better spacing */
-      .project-card {
-        border: 1px solid #334155;
-        border-radius: 16px;
-        overflow: hidden;
-        background: #1e293b;
-        transition: transform 0.2s, border-color 0.2s;
-      }
-      .project-card:hover {
-        transform: translateY(-4px);
-        border-color: #c084fc;
-      }
-      .project-content {
-        padding: 1.5rem;
-      }
-      .project-image .project-icon {
-        font-size: 4rem !important;
-        color: white;
-      }
-      .contact-form .form-group {
-        margin-bottom: 1rem;
-      }
-      .contact-form input,
-      .contact-form textarea {
-        width: 100%;
-        padding: 0.85rem 1.15rem;
-        border-radius: 10px;
-        border: 1.5px solid var(--border);
-        background: var(--bg-card);
-        color: var(--text-primary);
-        font-family: inherit;
-        font-size: 0.95rem;
-        outline: none;
-        transition: all 0.2s;
-      }
-      .contact-form input:focus,
-      .contact-form textarea:focus {
-        border-color: var(--primary);
-        box-shadow: 0 0 0 3px rgba(192,132,252,0.15);
-      }
-      .contact-form textarea {
-        resize: vertical;
-        min-height: 100px;
-      }
+      .contact-form { max-width: 580px; }
+      .contact-form .form-group { margin-bottom: 1rem !important; }
 
-      /* Hero buttons spacing */
-      .hero-description {
-        margin-bottom: 2rem !important;
+      #contactForm input, #contactForm textarea {
+        width: 100% !important; padding: 0.85rem 1.15rem !important;
+        border-radius: 8px !important; border: 1.5px solid #334155 !important;
+        background: #1e293b !important; color: #f1f5f9 !important;
+        font-family: inherit !important; font-size: 0.95rem !important;
+        outline: none !important; box-shadow: none !important;
       }
-      .hero-buttons {
-        gap: 1rem !important;
+      #contactForm input:focus, #contactForm textarea:focus {
+        border-color: #c084fc !important; box-shadow: 0 0 0 3px rgba(192,132,252,0.15) !important;
       }
+      #contactForm textarea { min-height: 100px !important; resize: vertical !important; }
 
-      /* Projects grid */
-      .projects-grid {
-        display: grid !important;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
-        gap: 2rem !important;
-        align-items: stretch !important;
-      }
+      .hero-description { margin-bottom: 2rem !important; }
+      .hero-buttons { gap: 1rem !important; }
 
-      /* About text spacing */
-      .about-content {
-        gap: 3rem;
-      }
-      .about-text {
-        margin-bottom: 2rem;
-      }
-      .about-text p {
-        margin-bottom: 1rem;
-      }
-      .about-stats {
-        margin-top: 2.5rem;
-      }
+      .projects-grid { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important; gap: 2rem !important; align-items: stretch !important; }
 
-      /* Reduce hero scroll-down spacing */
-      #home {
-        margin-bottom: 0 !important;
-        padding-bottom: 0 !important;
-      }
-      #about.section {
-        padding-top: 2rem;
-      }
+      .about-content { gap: 3rem; }
+      .about-text { margin-bottom: 2rem; }
+      .about-text p { margin-bottom: 1rem; }
+      .about-stats { margin-top: 2.5rem; }
 
-      /* Section container max width for better readability */
-      .section-container {
-        max-width: 900px;
-        margin: 0 auto;
-      }
+      #home { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+      #about.section { padding-top: 2rem; }
+
+      .section-container { max-width: 900px; margin: 0 auto; }
     </style>
   </head>
   <body>
