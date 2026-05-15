@@ -75,56 +75,29 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- ═══════════════════════ LABS ═══════════════════════ -->
-  <section id="labs" class="Speaking pad-around-xlg">
-    <div class="wrapper">
-      <div class="Speaking__intro">
-        <div class="Speaking__text">
-          <h2 class="Speaking__heading scramble">Explorando.</h2>
-          <p>
-            Del dato crudo al dashboard, de la idea al ecosistema.
-            Me muevo entre el backend que procesa terabytes y el frontend
-            que hace que todo se vea simple.
-          </p>
-          <p>
-            Cada proyecto es una excusa para aprender algo nuevo:
-            una API, un modelo de ML, un agente aut&oacute;nomo o una
-            arquitectura serverless.
-          </p>
-          <a href="https://github.com/LeandroBenjaminL" target="_blank" rel="noopener" class="Speaking__link">
-            Ver todos los repos &rarr;
-          </a>
-        </div>
-        <figure class="Speaking__image">
-          <div style="width:200px; height:200px; border-radius:8px; background:var(--color-lilac); display:flex; align-items:center; justify-content:center; font-size:4rem;">
-            ⚡
-          </div>
-          <figcaption>data engineer</figcaption>
-        </figure>
-      </div>
-
-      <div class="Speaking__talks">
-        <article class="Card">
-          <p class="Card__type scramble">data</p>
-          <a href="https://github.com/LeandroBenjaminL/datlas" target="_blank" rel="noopener" class="Card__link sf-flow underline">
-            <h3 class="h4 underline__text">ETL pipelines &amp; data cleansing</h3>
-            <p>
-              Dise&ntilde;o y construcci&oacute;n de pipelines robustos con Python, FastAPI y PostgreSQL.
-              Detecci&oacute;n autom&aacute;tica de anomal&iacute;as, normalizaci&oacute;n y exportaci&oacute;n multi-formato.
-            </p>
-          </a>
-        </article>
-
-        <article class="Card">
-          <p class="Card__type scramble">ai</p>
-          <a href="https://github.com/LeandroBenjaminL/lend-ai" target="_blank" rel="noopener" class="Card__link sf-flow underline">
-            <h3 class="h4 underline__text">AI agent ecosystems</h3>
-            <p>
-              Arquitectura de agentes modulares con routing inteligente de modelos LLM.
-              Skills, MCPs y sub-agentes ef&iacute;meros que amplifican el trabajo con IA.
-            </p>
-          </a>
-        </article>
+  <!-- ═══════════════════════ HERRAMIENTAS ═══════════════════════ -->
+  <section id="tools" class="section pad-around-lg">
+    <div class="wrapper" style="text-align:center;">
+      <h2 class="scramble" style="font-size:clamp(2.2rem,5vw,3.5rem); font-weight:700; line-height:1.2; margin-bottom:2rem;">Stack.</h2>
+      <div style="display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:center; max-width:600px; margin:0 auto;">
+        <span class="tag accent" style="font-size:0.9rem; padding:0.5rem 1rem;">Python</span>
+        <span class="tag teal" style="font-size:0.9rem; padding:0.5rem 1rem;">FastAPI</span>
+        <span class="tag" style="font-size:0.9rem; padding:0.5rem 1rem;">Pandas</span>
+        <span class="tag" style="font-size:0.9rem; padding:0.5rem 1rem;">NumPy</span>
+        <span class="tag" style="font-size:0.9rem; padding:0.5rem 1rem;">PostgreSQL</span>
+        <span class="tag" style="font-size:0.9rem; padding:0.5rem 1rem;">SQLite</span>
+        <span class="tag purple" style="font-size:0.9rem; padding:0.5rem 1rem;">Astro</span>
+        <span class="tag accent" style="font-size:0.9rem; padding:0.5rem 1rem;">React</span>
+        <span class="tag teal" style="font-size:0.9rem; padding:0.5rem 1rem;">TypeScript</span>
+        <span class="tag" style="font-size:0.9rem; padding:0.5rem 1rem;">HTML/CSS</span>
+        <span class="tag" style="font-size:0.9rem; padding:0.5rem 1rem;">JavaScript</span>
+        <span class="tag" style="font-size:0.9rem; padding:0.5rem 1rem;">Docker</span>
+        <span class="tag" style="font-size:0.9rem; padding:0.5rem 1rem;">AWS</span>
+        <span class="tag teal" style="font-size:0.9rem; padding:0.5rem 1rem;">GitHub Actions</span>
+        <span class="tag" style="font-size:0.9rem; padding:0.5rem 1rem;">Linux</span>
+        <span class="tag" style="font-size:0.9rem; padding:0.5rem 1rem;">Git</span>
+        <span class="tag purple" style="font-size:0.9rem; padding:0.5rem 1rem;">MCP</span>
+        <span class="tag accent" style="font-size:0.9rem; padding:0.5rem 1rem;">LLMs</span>
       </div>
     </div>
   </section>
@@ -190,25 +163,6 @@ import Layout from '../layouts/Layout.astro';
                   <span class="tag">Node.js</span>
                 </div>
                 <a href="https://github.com/LeandroBenjaminL/crypto-tracker" target="_blank" rel="noopener" class="proj-card__link">Ver repositorio &rarr;</a>
-              </div>
-            </div>
-          </div>
-          <!-- Data Analyst Ecosystem -->
-          <div class="swiper-slide co-carousel__slide">
-            <div class="proj-card">
-              <div class="proj-card__icon">🔬</div>
-              <div class="proj-card__body">
-                <div class="text-mask"><span class="proj-card__label">Open Source</span></div>
-                <div class="text-mask"><span class="proj-card__title">Data Analyst Ecosystem</span></div>
-                <div class="text-mask"><span class="proj-card__desc">Ecosistema de agentes AI para data science con routing inteligente de modelos LLM.</span></div>
-                <div class="proj-card__tags">
-                  <span class="tag accent">Python</span>
-                  <span class="tag teal">MCP</span>
-                  <span class="tag purple">LLMs</span>
-                  <span class="tag">SQLite</span>
-                  <span class="tag">YAML</span>
-                </div>
-                <a href="https://github.com/LeandroBenjaminL/data-analyst-ecosystem" target="_blank" rel="noopener" class="proj-card__link">Ver repositorio &rarr;</a>
               </div>
             </div>
           </div>
