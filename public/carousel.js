@@ -1,8 +1,6 @@
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.mjs';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const backgroundWrapper = document.querySelectorAll('.co-background');
-
   const swiper = new Swiper('.co-carousel', {
     loop: false,
     watchSlidesProgress: true,
@@ -21,37 +19,27 @@ document.addEventListener('DOMContentLoaded', () => {
         swiper.params.speed = Math.max(200, Math.min(1000, newSpeed));
       },
       progress: function (swiper) {
-        swiper.slides.forEach((slide, index) => {
+        swiper.slides.forEach((slide) => {
           const progress = slide.progress;
           if (progress >= -1 && progress <= 1) {
-            const rotateShoeMax = 15;
             const progressPositive = Math.abs(progress);
-            const translateX = progress * -100;
-            const rotateShoe = progressPositive * rotateShoeMax - rotateShoeMax;
-            const textMaskY = progressPositive * 50;
-            const scale = 1 - progressPositive * 0.2;
-            const opacity = 0.5 - progressPositive * 0.5;
+            const scale = 1 - progressPositive * 0.15;
+            const textMaskY = progressPositive * 30;
+            const opacity = 1 - progressPositive * 0.4;
 
-            slide.querySelector('.co-card').style.transform = `scale(${scale})`;
-            slide.querySelector('.co-card__shoe-img').style.transform =
-              `translate3d(${translateX}px, 0, 0) rotate(${rotateShoe}deg)`;
-            slide.querySelector('.co-card__shoe-shadow').style.transform =
-              `translate3d(${translateX / 2}px, 0, 0)`;
-            backgroundWrapper[index].style.opacity = opacity.toFixed(2);
+            slide.querySelector('.proj-card').style.transform = `scale(${scale})`;
+            slide.querySelector('.proj-card').style.opacity = opacity.toFixed(2);
 
-            const textsMask = slide.querySelectorAll('.text-mask span');
-            textsMask.forEach((t, i) => {
+            const masks = slide.querySelectorAll('.text-mask span');
+            masks.forEach((t, i) => {
               t.style.transform = `translate3d(0, ${textMaskY * (i + 1)}px, 0)`;
             });
           }
         });
       },
       setTransition: function (swiper, speed) {
-        swiper.slides.forEach((slide, index) => {
-          slide.querySelector('.co-card').style.transition = `${speed}ms`;
-          slide.querySelector('.co-card__shoe-img').style.transition = `${speed}ms`;
-          slide.querySelector('.co-card__shoe-shadow').style.transition = `${speed}ms`;
-          backgroundWrapper[index].style.transition = `${speed}ms`;
+        swiper.slides.forEach((slide) => {
+          slide.querySelector('.proj-card').style.transition = `${speed}ms`;
           slide.querySelectorAll('.text-mask span').forEach((t) => {
             t.style.transition = `${speed}ms`;
           });

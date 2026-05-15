@@ -130,73 +130,95 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- ═══════════════════════ CARRUSEL ═══════════════════════ -->
-  <section id="carousel" class="section carousel-section">
+  <section id="projects-showcase" class="section carousel-section pad-around-xlg">
+    <h2 class="Posts-intro__heading" style="text-align:center; margin-bottom:3rem;">Proyectos en foco.</h2>
     <div class="co-carousel-wrap">
       <div class="swiper co-carousel">
         <div class="swiper-wrapper">
+          <!-- Datlas -->
           <div class="swiper-slide co-carousel__slide">
-            <div class="co-card">
-              <div class="co-card__shoe">
-                <img class="co-card__shoe-img" src="https://codocular.com/lab/swiper-carousel/nike1.85b9a747.png" alt="" />
-                <span class="co-card__shoe-shadow"></span>
-              </div>
-              <div class="co-card__info">
-                <div class="co-card__collection text-mask"><span>Men's Original</span></div>
-                <div class="co-card__title text-mask"><span>Nike Air Force</span></div>
-                <div class="co-card__price text-mask"><span>$150.00</span></div>
+            <div class="proj-card">
+              <div class="proj-card__icon">⚡</div>
+              <div class="proj-card__body">
+                <div class="text-mask"><span class="proj-card__label">Destacado</span></div>
+                <div class="text-mask"><span class="proj-card__title">Datlas</span></div>
+                <div class="text-mask"><span class="proj-card__desc">Carga, limpieza y exploraci&oacute;n de datasets. Detecci&oacute;n autom&aacute;tica de nulos y outliers.</span></div>
+                <div class="proj-card__tags">
+                  <span class="tag accent">Python</span>
+                  <span class="tag teal">FastAPI</span>
+                  <span class="tag">Pandas</span>
+                  <span class="tag">PostgreSQL</span>
+                  <span class="tag purple">Astro</span>
+                  <span class="tag">Docker</span>
+                  <span class="tag">AWS</span>
+                </div>
+                <a href="https://github.com/LeandroBenjaminL/datlas" target="_blank" rel="noopener" class="proj-card__link">Ver repositorio &rarr;</a>
               </div>
             </div>
           </div>
+          <!-- LEND.AI -->
           <div class="swiper-slide co-carousel__slide">
-            <div class="co-card co-card--style-1">
-              <div class="co-card__shoe">
-                <img class="co-card__shoe-img" src="https://codocular.com/lab/swiper-carousel/nike2.3412fa36.png" alt="" />
-                <span class="co-card__shoe-shadow"></span>
-              </div>
-              <div class="co-card__info">
-                <div class="co-card__collection text-mask"><span>Jordans</span></div>
-                <div class="co-card__title text-mask"><span>Nike Air Jordan</span></div>
-                <div class="co-card__price text-mask"><span>$249.99</span></div>
+            <div class="proj-card">
+              <div class="proj-card__icon">🧠</div>
+              <div class="proj-card__body">
+                <div class="text-mask"><span class="proj-card__label">AI Ecosystem</span></div>
+                <div class="text-mask"><span class="proj-card__title">LEND.AI</span></div>
+                <div class="text-mask"><span class="proj-card__desc">Ecosistema de agentes de IA con routing inteligente, skills modulares y servidores MCP.</span></div>
+                <div class="proj-card__tags">
+                  <span class="tag accent">Python</span>
+                  <span class="tag teal">MCP</span>
+                  <span class="tag purple">LLMs</span>
+                  <span class="tag">SQLite</span>
+                  <span class="tag">YAML</span>
+                </div>
+                <a href="https://github.com/LeandroBenjaminL/lend-ai" target="_blank" rel="noopener" class="proj-card__link">Ver repositorio &rarr;</a>
               </div>
             </div>
           </div>
+          <!-- Crypto Tracker -->
           <div class="swiper-slide co-carousel__slide">
-            <div class="co-card co-card--style-2">
-              <div class="co-card__shoe">
-                <img class="co-card__shoe-img" src="https://codocular.com/lab/swiper-carousel/nike3.14907490.png" alt="" />
-                <span class="co-card__shoe-shadow"></span>
-              </div>
-              <div class="co-card__info">
-                <div class="co-card__collection text-mask"><span>Purple Rain</span></div>
-                <div class="co-card__title text-mask"><span>Nike Air Max</span></div>
-                <div class="co-card__price text-mask"><span>$150.00</span></div>
+            <div class="proj-card">
+              <div class="proj-card__icon">📊</div>
+              <div class="proj-card__body">
+                <div class="text-mask"><span class="proj-card__label">Full-Stack</span></div>
+                <div class="text-mask"><span class="proj-card__title">Crypto Tracker</span></div>
+                <div class="text-mask"><span class="proj-card__desc">Rastreador de criptomonedas en tiempo real. APIs de mercado, historial y portfolio personal.</span></div>
+                <div class="proj-card__tags">
+                  <span class="tag accent">Python</span>
+                  <span class="tag teal">APIs</span>
+                  <span class="tag">React</span>
+                  <span class="tag">Node.js</span>
+                </div>
+                <a href="https://github.com/LeandroBenjaminL/crypto-tracker" target="_blank" rel="noopener" class="proj-card__link">Ver repositorio &rarr;</a>
               </div>
             </div>
           </div>
+          <!-- Data Analyst Ecosystem -->
           <div class="swiper-slide co-carousel__slide">
-            <div class="co-card co-card--style-3">
-              <div class="co-card__shoe">
-                <img class="co-card__shoe-img" src="https://codocular.com/lab/swiper-carousel/nike4.62fca82d.png" alt="" />
-                <span class="co-card__shoe-shadow"></span>
-              </div>
-              <div class="co-card__info">
-                <div class="co-card__collection text-mask"><span>Men's Original</span></div>
-                <div class="co-card__title text-mask"><span>Nike Air Force</span></div>
-                <div class="co-card__price text-mask"><span>$150.00</span></div>
+            <div class="proj-card">
+              <div class="proj-card__icon">🔬</div>
+              <div class="proj-card__body">
+                <div class="text-mask"><span class="proj-card__label">Open Source</span></div>
+                <div class="text-mask"><span class="proj-card__title">Data Analyst Ecosystem</span></div>
+                <div class="text-mask"><span class="proj-card__desc">Ecosistema de agentes AI para data science con routing inteligente de modelos LLM.</span></div>
+                <div class="proj-card__tags">
+                  <span class="tag accent">Python</span>
+                  <span class="tag teal">MCP</span>
+                  <span class="tag purple">LLMs</span>
+                  <span class="tag">SQLite</span>
+                  <span class="tag">YAML</span>
+                </div>
+                <a href="https://github.com/LeandroBenjaminL/data-analyst-ecosystem" target="_blank" rel="noopener" class="proj-card__link">Ver repositorio &rarr;</a>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="co-carousel__nav-buttons">
-        <div class="co-carousel__nav-button prev"><span>Prev</span></div>
-        <div class="co-carousel__nav-button next"><span>Next</span></div>
+        <div class="co-carousel__nav-button prev"><span>Anterior</span></div>
+        <div class="co-carousel__nav-button next"><span>Siguiente</span></div>
       </div>
     </div>
-    <div class="co-background co-background--style-0"></div>
-    <div class="co-background co-background--style-1"></div>
-    <div class="co-background co-background--style-2"></div>
-    <div class="co-background co-background--style-3"></div>
   </section>
 
   <!-- ═══════════════════════ CONTACTO ═══════════════════════ -->
