@@ -124,8 +124,8 @@ function initLiquidGradient() {
     uColor4: { value: new THREE.Vector3(...CASSIE.peach) },
     uColor5: { value: new THREE.Vector3(...CASSIE.marshmellow) },
     uColor6: { value: new THREE.Vector3(...CASSIE.sherbet) },
-    uSpeed: { value: 0.6 },
-    uIntensity: { value: 0.85 },
+    uSpeed: { value: 0.35 },
+    uIntensity: { value: 0.45 },
     uTouchTexture: { value: touchTexture.texture },
   };
 
@@ -158,8 +158,8 @@ function initLiquidGradient() {
       float vx = -(touch.r * 2.0 - 1.0);
       float vy = -(touch.g * 2.0 - 1.0);
       float intensity = touch.b;
-      uv.x += vx * 0.4 * intensity;
-      uv.y += vy * 0.4 * intensity;
+      uv.x += vx * 0.15 * intensity;
+      uv.y += vy * 0.15 * intensity;
 
       // Multiple animated gradient centers
       vec2 c1 = vec2(0.5 + sin(uTime * uSpeed * 0.4) * 0.35, 0.5 + cos(uTime * uSpeed * 0.5) * 0.35);
@@ -196,7 +196,7 @@ function initLiquidGradient() {
 
       // Keep it subtle - mix with base
       float brightness = length(color);
-      color = mix(vec3(0.933, 0.922, 0.937), color, min(brightness * 0.7, 0.65));
+      color = mix(vec3(0.933, 0.922, 0.937), color, min(brightness * 0.35, 0.35));
 
       // Grain
       color += grain(uv, uTime) * 0.03;
