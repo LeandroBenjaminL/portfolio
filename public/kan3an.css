@@ -867,9 +867,7 @@ img {
 .skill-percent { font-family: var(--font-code); color: var(--primary); font-weight: 600; }
 .skill-bar { height: 12px; background: var(--bg-darker); border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
 .skill-progress { height: 100%; background: var(--gradient-1); border-radius: 6px; width: 0%; }
-.skill-progress::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent); animation: shimmer 2s infinite; }
 
-@keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
 
 .timeline { position: relative; padding-inline-start: 2rem; }
 .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--gradient-1); }
