@@ -34,14 +34,14 @@
 }
 
 [data-theme="light"] {
-    --bg-dark: #f5f2ee;
-    --bg-darker: #eae5df;
-    --bg-card: #faf8f5;
-    --bg-hover: #e8e3dd;
-    --border: #d5cfc7;
-    --text-primary: #2d2a26;
+    --bg-dark: #eeebef;
+    --bg-darker: #e2dcd8;
+    --bg-card: #f5f2ef;
+    --bg-hover: #ddd8d2;
+    --border: #cdc7bf;
+    --text-primary: #3a3632;
     --text-secondary: #6b6560;
-    --text-muted: #aea69e;
+    --text-muted: #a69e96;
 }
 
 [dir="rtl"] { direction: rtl; text-align: right; }
@@ -584,7 +584,7 @@ img {
     transform: translate(-50%, -50%);
     width: 120%;
     height: 120%;
-    background: radial-gradient(circle, rgba(255,107,157,0.2) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(192,132,252,0.12) 0%, transparent 70%);
     border-radius: 50%;
     animation: pulse 3s ease-in-out infinite;
 }
@@ -606,9 +606,7 @@ img {
     height: 100%;
     border-radius: 50%;
     border: 4px solid var(--primary);
-    box-shadow: 
-        0 0 30px rgba(255,107,157,0.3),
-        0 0 60px rgba(255,107,157,0.1);
+    box-shadow: 0 0 20px rgba(192,132,252,0.15), 0 0 40px rgba(192,132,252,0.05);
     overflow: hidden;
     background: var(--bg-card);
 }
@@ -868,7 +866,7 @@ img {
 .skill-name { font-family: var(--font-code); color: var(--cyan); font-weight: 600; }
 .skill-percent { font-family: var(--font-code); color: var(--primary); font-weight: 600; }
 .skill-bar { height: 12px; background: var(--bg-darker); border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
-.skill-progress { height: 100%; background: var(--gradient-1); border-radius: 6px; width: 0%; box-shadow: 0 0 10px rgba(255,107,157,0.5); }
+.skill-progress { height: 100%; background: var(--gradient-1); border-radius: 6px; width: 0%; box-shadow: 0 0 6px rgba(192,132,252,0.2); }
 .skill-progress::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); animation: shimmer 2s infinite; }
 
 @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
