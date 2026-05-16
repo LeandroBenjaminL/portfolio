@@ -34,14 +34,14 @@
 }
 
 [data-theme="light"] {
-    --bg-dark: #eeebef;
-    --bg-darker: #e2dcd8;
-    --bg-card: #f5f2ef;
-    --bg-hover: #ddd8d2;
-    --border: #cdc7bf;
-    --text-primary: #3a3632;
-    --text-secondary: #6b6560;
-    --text-muted: #a69e96;
+    --bg-dark: #f2efe8;
+    --bg-darker: #e8e4dc;
+    --bg-card: #ffffff;
+    --bg-hover: #f0ebe4;
+    --border: #d5cfc5;
+    --text-primary: #2d2824;
+    --text-secondary: #6b6359;
+    --text-muted: #a69e94;
 }
 
 [dir="rtl"] { direction: rtl; text-align: right; }
