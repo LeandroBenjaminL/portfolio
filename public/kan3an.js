@@ -254,7 +254,7 @@ function initLoaderAnimation() {
     if (!loader || !loaderPercent) return;
     let progress = 0;
     const interval = setInterval(() => {
-        progress += Math.random() * 15;
+        progress += Math.random() * 30;
         if (progress >= 100) {
             progress = 100;
             clearInterval(interval);
