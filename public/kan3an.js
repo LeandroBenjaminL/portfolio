@@ -176,9 +176,9 @@ function handleFormSubmit(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
-    console.log('Form submitted:', data);
-    alert('Message sent successfully!');
-    e.target.reset();
+    const subject = encodeURIComponent(data.asunto || 'Contacto desde portfolio');
+    const body = encodeURIComponent('Nombre: ' + (data.nombre || '') + '\nEmail: ' + (data.email || '') + '\n\nMensaje:\n' + (data.mensaje || ''));
+    window.location.href = 'mailto:leandrobenjaminnn@gmail.com?subject=' + subject + '&body=' + body;
 }
 
 function initMobileMenu() {

@@ -17,48 +17,5 @@ const { title = 'Leandro Benjamin — Portfolio' } = Astro.props;
     <slot />
     <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script is:inline src="/portfolio/kan3an.js"></script>
-    <style>
-      .project-card-link {
-        color: inherit;
-        text-decoration: none;
-        transition: opacity 0.2s;
-      }
-      .project-card-link:hover {
-        opacity: 0.8;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
-      .project-card {
-        cursor: pointer;
-      }
-      .project-card:hover .project-card-link {
-        opacity: 0.85;
-      }
-    </style>
-    <script is:inline>
-      document.addEventListener('click', function(e) {
-        var btn = e.target.closest('.btn-primary[href^="#"], .btn-secondary[href^="#"]');
-        if (btn) {
-          e.preventDefault();
-          var target = document.querySelector(btn.getAttribute('href'));
-          if (target) target.scrollIntoView({ behavior: 'smooth' });
-        }
-        var card = e.target.closest('.project-card');
-        if (card && !e.target.closest('.project-card-link') && !e.target.closest('.project-link')) {
-          var link = card.querySelector('.project-card-link');
-          if (link) window.open(link.getAttribute('href'), '_blank');
-        }
-      });
-      var form = document.getElementById('contactForm');
-      if (form) {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          var fd = new FormData(form);
-          var subject = fd.get('asunto') || 'Contacto desde portfolio';
-          var body = 'Nombre: ' + (fd.get('nombre') || '') + '\nEmail: ' + (fd.get('email') || '') + '\n\nMensaje:\n' + (fd.get('mensaje') || '');
-          window.location.href = 'mailto:leandrobenjaminnn@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-        });
-      }
-    </script>
   </body>
 </html>

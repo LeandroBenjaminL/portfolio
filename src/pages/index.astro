@@ -68,8 +68,8 @@ import Layout from '../layouts/Layout.astro';
             Transformo datos en pipelines, APIs en productos y c&oacute;digo en ecosistemas.
           </p>
           <div class="hero-buttons">
-            <a href="#contact" class="btn btn-primary"><span>Contacto</span><i class="fas fa-arrow-right"></i></a>
-            <a href="#projects" class="btn btn-secondary"><span>Proyectos</span><i class="fas fa-code"></i></a>
+            <a href="#contact" class="btn btn-primary" onclick="event.preventDefault();document.querySelector('#contact').scrollIntoView({behavior:'smooth'})"><span>Contacto</span><i class="fas fa-arrow-right"></i></a>
+            <a href="#projects" class="btn btn-secondary" onclick="event.preventDefault();document.querySelector('#projects').scrollIntoView({behavior:'smooth'})"><span>Proyectos</span><i class="fas fa-code"></i></a>
           </div>
           <div class="hero-social">
             <a href="https://github.com/LeandroBenjaminL" target="_blank" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
@@ -210,12 +210,12 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <div class="projects-grid">
           <!-- Datlas -->
-          <div class="project-card">
+          <div class="project-card" onclick="if(!event.target.closest('.project-link, .project-card-link'))window.open('https://github.com/LeandroBenjaminL/datlas','_blank')">
             <div class="project-image">
               <div class="project-overlay">
                 <div class="project-links">
-                  <a href="https://github.com/LeandroBenjaminL/datlas" target="_blank" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
-                  <a href="https://datlas.onrender.com" target="_blank" class="project-link" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                  <a href="https://github.com/LeandroBenjaminL/datlas" target="_blank" class="project-link" title="View Code" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
+                  <a href="https://datlas.onrender.com" target="_blank" class="project-link" title="Live Demo" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i></a>
                 </div>
               </div>
               <div class="project-placeholder"><i class="fas fa-database"></i></div>
@@ -229,11 +229,11 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
           <!-- LEND.AI -->
-          <div class="project-card">
+          <div class="project-card" onclick="if(!event.target.closest('.project-link, .project-card-link'))window.open('https://github.com/LeandroBenjaminL/lend-ai','_blank')">
             <div class="project-image">
               <div class="project-overlay">
                 <div class="project-links">
-                  <a href="https://github.com/LeandroBenjaminL/lend-ai" target="_blank" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                  <a href="https://github.com/LeandroBenjaminL/lend-ai" target="_blank" class="project-link" title="View Code" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
                 </div>
               </div>
               <div class="project-placeholder"><i class="fas fa-brain"></i></div>
@@ -247,11 +247,11 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
           <!-- Crypto Tracker -->
-          <div class="project-card">
+          <div class="project-card" onclick="if(!event.target.closest('.project-link, .project-card-link'))window.open('https://github.com/LeandroBenjaminL/crypto-tracker','_blank')">
             <div class="project-image">
               <div class="project-overlay">
                 <div class="project-links">
-                  <a href="https://github.com/LeandroBenjaminL/crypto-tracker" target="_blank" class="project-link" title="View Code"><i class="fab fa-github"></i></a>
+                  <a href="https://github.com/LeandroBenjaminL/crypto-tracker" target="_blank" class="project-link" title="View Code" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
                 </div>
               </div>
               <div class="project-placeholder"><i class="fas fa-chart-line"></i></div>
@@ -316,5 +316,8 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </footer>
+  <style>
+    .project-card { cursor: pointer; }
+  </style>
 </Layout>
 
